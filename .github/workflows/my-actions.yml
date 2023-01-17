@@ -9,3 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       -  run: echo "Hello, GitHub Action for ubuntu-latest starts here..."
+    # set dependencies
+    needs: [say-hello]
+    runs-on: ubuntu-latest
+    steps:
+      # uses boilerplate action code - get it from github first
+      - name: Check out boilerplate repo
+        uses: actions/checkout@v3
+
+      # install required packaes
+      - name: Install dependencies on ubuntu-latest instance
+        run: sudo apt install -y build-essentials python3
+ 
+      # sanity check
+      - run: pwd
+
+      # run tests
+      - name: Run test 1
+        run python3 test.py
+
+

@@ -22,7 +22,7 @@ jobs:
 
       # install required packaes
       - name: Install dependencies on ubuntu-latest instance
-        run: sudo apt install -y build-essentials python3
+        run: sudo apt install -y build-essential python3
  
       # sanity check
       - run: pwd

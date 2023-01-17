@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       -  run: echo "Hello, GitHub Action for ubuntu-latest starts here..."
+
+  # next job to build C code
+  build-and-test:
     # set dependencies
     needs: [say-hello]
     runs-on: ubuntu-latest
@@ -26,6 +29,6 @@ jobs:
 
       # run tests
       - name: Run test 1
-        run python3 test.py
+        run: python3 test.py
 
 

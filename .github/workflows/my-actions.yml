@@ -1,0 +1,11 @@
+name: MyTestWorkFlow
+# GIT Trigger evvent(s): [push, pull_request, etc..]
+on: [push]
+#jobs and sequence steps to run on event
+jobs:
+  # silly name for job
+  say-hello: 
+    # hub.docker container
+    runs-on: ubuntu-latest
+    steps: 
+      -  run: echo "Hello, GitHub Action for ubuntu-latest starts here..."
